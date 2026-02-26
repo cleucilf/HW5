@@ -52,6 +52,21 @@ void test_multiply_zero(void){
     TEST_ASSERT_EQUAL(0, multiply(10, 0));
     TEST_ASSERT_EQUAL(0, multiply(0, 0));
 }
+void test_divide_basic(void) {
+    TEST_ASSERT_EQUAL(2, divide(6, 3));
+}
+
+void test_divide_integer_division(void) {
+    TEST_ASSERT_EQUAL(2, divide(5, 2)); 
+}
+
+void test_divide_negative(void) {
+    TEST_ASSERT_EQUAL(-3, divide(-9, 3));
+}
+
+void test_divide_by_zero_returns_zero(void) {
+    TEST_ASSERT_EQUAL(0, divide(10, 0)); 
+}
 int main(void){
     UNITY_BEGIN();
     RUN_TEST(test_add_basic);
@@ -68,5 +83,9 @@ int main(void){
     RUN_TEST(test_multiply_positive_negative);
     RUN_TEST(test_multiply_negative_negative);
     RUN_TEST(test_multiply_zero);
+    RUN_TEST(test_divide_basic);
+    RUN_TEST(test_divide_integer_division);
+    RUN_TEST(test_divide_negative);
+    RUN_TEST(test_divide_by_zero_returns_zero);
     return UNITY_END();
 }
